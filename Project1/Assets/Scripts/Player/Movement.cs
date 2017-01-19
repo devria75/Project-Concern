@@ -5,7 +5,7 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     [SerializeField]
-    private float speed = 12.0f;
+    private static float speed = 12.0f;
     [SerializeField]
     private float lookSensitiy = 3.0f;
 
@@ -28,6 +28,16 @@ public class Movement : MonoBehaviour {
         Vector3 _velocity = _movHorizontal + _movVertical;
 
         if (_velocity != Vector3.zero)
-            rb.MovePosition(rb.position + _velocity * speed * Time.deltaTime);        
+            rb.MovePosition(rb.position + _velocity * speed * Time.deltaTime);   
+
+		int helped = Spawner.PplHelped;
+
+		if (helped <= 5) {
+
+			//add vision affect
+
+			//slow player down
+			speed -= 1;
+		}
 	}
 }
