@@ -22,6 +22,7 @@ public class CrowdGenerator : MonoBehaviour {
 	void Update () {
 
 		RaycastHit hit;
+<<<<<<< HEAD
 		int flag = 0;
 		//right sensor
 		if (Physics.Raycast (transform.position, transform.right, out hit, (sensorLength + transform.localScale.x))) {
@@ -87,6 +88,9 @@ public class CrowdGenerator : MonoBehaviour {
 	
 
 
+=======
+		//if(Physics.Raycast(transform.position, transform.right, out hit(sensorLength + transform.localScale.x)))
+>>>>>>> origin/master
 		transform.position += transform.forward * (speed*direction) * Time.deltaTime;
 		//transform.position += transform.forward * speed * Time.deltaTime;
 	
