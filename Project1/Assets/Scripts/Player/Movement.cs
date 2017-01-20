@@ -30,14 +30,7 @@ public class Movement : MonoBehaviour {
         if (_velocity != Vector3.zero)
             rb.MovePosition(rb.position + _velocity * speed * Time.deltaTime);   
 
-		int helped = Spawner.PplHelped;
+		
 
-		if (helped <= 5) {
-
-			//add vision affect
-
-			//slow player down
-			speed -= 1;
-		}
 	}
 }
