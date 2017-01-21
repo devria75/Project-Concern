@@ -17,10 +17,10 @@ public class Spawner : MonoBehaviour {
 	void Spawn ()
 	{
 		// need counter script
-		if (PplHelped >= 5) {
+		//if (PplHelped >= 5) {
 
-			spawn = 0.5f;
-		}
+			//spawn = 0.5f;
+		//}
 
 		int spawnPointIndex = Random.Range (0, spawnSpot.Length);
 
