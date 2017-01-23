@@ -28,3 +28,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+Project1/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+
+Project1/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll
