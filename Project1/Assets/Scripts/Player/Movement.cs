@@ -5,9 +5,11 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     [SerializeField]
-    private static float speed = 12.0f;
+    private float speed = 12.0f;
     [SerializeField]
     private float lookSensitiy = 3.0f;
+    [SerializeField]
+    private float maxSpeed = 25f;
 
     private Rigidbody rb;
     private Vector3 velocity = Vector3.zero;
@@ -30,4 +32,10 @@ public class Movement : MonoBehaviour {
         if (_velocity != Vector3.zero)
             rb.MovePosition(rb.position + _velocity * speed * Time.deltaTime);   
 	}
+
+    public void addSpeed(float speed)
+    {
+        Mathf.Clamp(this.speed += speed, 0, maxSpeed);
+    }
+
 }
