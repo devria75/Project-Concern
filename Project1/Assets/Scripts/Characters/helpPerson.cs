@@ -12,15 +12,17 @@ public class helpPerson : MonoBehaviour {
 		helped = false;
 		rend.sharedMaterial = materials [0];
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 	void OnMouseDown(){
 		if (helped == false) {
 			rend.sharedMaterial = materials [1];
 			helped = true;
 		}
 	}
+
+    public bool getHelpStatus()
+    {
+        return helped;
+    }
+
 }
