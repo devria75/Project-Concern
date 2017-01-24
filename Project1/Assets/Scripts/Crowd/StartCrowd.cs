@@ -26,12 +26,12 @@ public class StartCrowd : MonoBehaviour {
 		//right sensor
 		if (Physics.Raycast (transform.position, transform.right, out hit, (sensorLength + transform.localScale.x))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
-				return;
-			}
+			if (hit.collider.tag == "Obstacle"  ) {
+                turnV -= 1;
+                flag++;
+            }
 
-			turnV -= 1;
-			flag++;
+
 
 			//Also add obstacle tag to ends of the alley
 		}
@@ -39,42 +39,45 @@ public class StartCrowd : MonoBehaviour {
 		//left
 		if (Physics.Raycast (transform.position, -transform.right, out hit, (sensorLength + transform.localScale.x))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
-				return;
-			}
+            if (hit.collider.tag == "Obstacle"  )
+            {
 
-			turnV += 1;
-			flag++;
+                turnV += 1;
+                flag++;
+            }
+
 		}
 
 		//front
 		if (Physics.Raycast (transform.position, transform.forward, out hit, (sensorLength + transform.localScale.z))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
+            if (hit.collider.tag == "Obstacle"  )
+            {
+                if (direction == 1.0f)
+                {
 
-				return;
-			}
+                    direction = -1;
+                }
+                flag++;
+            }
 
-			if (direction == 1.0f) {
-
-				direction = -1;
-			}
-			flag++;
 
 		}
 
 		//back
 		if (Physics.Raycast (transform.position, -transform.forward, out hit, (sensorLength + transform.localScale.z))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
-				return;
-			}
+            if (hit.collider.tag == "Obstacle"  )
+            {
 
-			if (direction == -1.0f) {
+                if (direction == -1.0f)
+                {
 
-				direction = 1;
-			}
-			flag++;
+                    direction = 1;
+                }
+                flag++;
+            }
+
 		}
 
 		if(flag == 0){
