@@ -27,7 +27,7 @@ public class CrowdGenerator : MonoBehaviour {
 		//right sensor
 		if (Physics.Raycast (transform.position, transform.right, out hit, (sensorLength + transform.localScale.x))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
+			if (hit.collider.tag == "Obstacle" ) {
 				return;
 			}
 
@@ -40,7 +40,7 @@ public class CrowdGenerator : MonoBehaviour {
 		//left
 		if (Physics.Raycast (transform.position, -transform.right, out hit, (sensorLength + transform.localScale.x))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
+			if (hit.collider.tag == "Obstacle" ) {
 				return;
 			}
 
@@ -51,7 +51,7 @@ public class CrowdGenerator : MonoBehaviour {
 		//front
 		if (Physics.Raycast (transform.position, transform.forward, out hit, (sensorLength + transform.localScale.z))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
+			if (hit.collider.tag == "Obstacle" ) {
 
 				return;
 			}
@@ -67,7 +67,7 @@ public class CrowdGenerator : MonoBehaviour {
 		//back
 		if (Physics.Raycast (transform.position, -transform.forward, out hit, (sensorLength + transform.localScale.z))) {
 
-			if (hit.collider.tag != "Obstacle" || hit.collider == mycol) {
+			if (hit.collider.tag == "Obstacle" ) {
 				return;
 			}
 
