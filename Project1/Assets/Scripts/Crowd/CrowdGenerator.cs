@@ -3,13 +3,13 @@ using System.Collections;
 
 public class CrowdGenerator : MonoBehaviour {
 	
-	public float sensorLength = 5.0f;
-	public float speed =10.0f;
+	[SerializeField] float sensorLength = 5.0f;
+	[SerializeField] float speed =10.0f;
 	//control where it goes
-	public float direction = 1.0f;
-	public float turnV = 0.0f;
-	public float turnSpeed = 50.0f;
-	public float life = 10f;
+	[SerializeField] float direction = 1.0f;
+	[SerializeField] float turnV = 0.0f;
+	[SerializeField] float turnSpeed = 50.0f;
+	[SerializeField] float life = 10f;
 	Collider mycol;
 	// Use this for initialization
 	void Start () {
