@@ -7,14 +7,19 @@ public class helpPerson : MonoBehaviour {
 	bool helped;
 	public Material[] materials;
 	public Renderer rend;
+
 	// Use this for initialization
 	void Start () {
 		helped = false;
 		rend.sharedMaterial = materials [0];
 	}
 
+	void Update(){
+	}
+
 	void OnMouseDown(){
 		if (helped == false) {
+			FindObjectOfType<playerResources>().subtractMoney (3);
 			rend.sharedMaterial = materials [1];
 			helped = true;
 		}
@@ -24,5 +29,4 @@ public class helpPerson : MonoBehaviour {
     {
         return helped;
     }
-
 }
