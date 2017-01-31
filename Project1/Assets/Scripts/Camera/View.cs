@@ -7,8 +7,8 @@ public class View : MonoBehaviour {
     public float smoothing = 2f;
     public float minYLook = -90f;
     public float maxYLook = 90f;
-    public float minXLook = -360f;
-    public float maxXLook = 360f;
+    //public float minXLook = -360f;
+    //public float maxXLook = 360f;
 
     private Vector2 mouseLook;
     private Vector2 smoothV;
@@ -29,7 +29,7 @@ public class View : MonoBehaviour {
         mouseLook += smoothV;
 
         mouseLook.y = Mathf.Clamp(mouseLook.y, minYLook, maxYLook);
-        mouseLook.x = Mathf.Clamp(mouseLook.x, minXLook, maxXLook);
+        //mouseLook.x = Mathf.Clamp(mouseLook.x, minXLook, maxXLook);
 
         transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
         transform.parent.gameObject.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, Vector3.up);
