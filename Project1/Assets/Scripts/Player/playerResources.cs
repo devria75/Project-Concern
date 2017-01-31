@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class playerResources : MonoBehaviour {
 
-	public int money = 30;
+	public int money = 15;
 	public Text textElement;
 
 	// Use this for initialization
@@ -28,7 +28,15 @@ public class playerResources : MonoBehaviour {
 	}
 
 	public void subtractMoney(int Money){
-		this.money -= Money;
-		textElement.text = money.ToString();
+        if (this.money > 0)
+        {
+            this.money -= Money;
+            textElement.text = money.ToString();
+        }
 	}
+
+    public int getMoney()
+    {
+        return money;
+    }
 }

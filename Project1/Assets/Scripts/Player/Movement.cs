@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour {
 
     public void addSpeed(float speed)
     {
-        Mathf.Clamp(this.speed += speed, 0, maxSpeed);
+        speed = Mathf.Clamp(this.speed + speed, 2, maxSpeed);
     }
 
 }

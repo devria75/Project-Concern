@@ -23,4 +23,9 @@ public class HelpPersonMovement : MonoBehaviour {
     {
         this.speed = speed;
     }
+
+    public float getSpeed()
+    {
+        return speed;
+    }
 }

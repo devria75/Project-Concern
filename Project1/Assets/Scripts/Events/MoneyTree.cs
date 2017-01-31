@@ -16,8 +16,8 @@ public class MoneyTree : MonoBehaviour {
 	
 	}
 	void OnMouseDown(){
-		if (resource >= 0) {
-			FindObjectOfType<playerResources> ().addMoney (5);
+		if (resource > 0) {
+			FindObjectOfType<playerResources> ().addMoney (4);
 			resource -= 1;
 			rend.sharedMaterial = materials [resource];
 		}
